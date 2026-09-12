@@ -61,7 +61,7 @@ local function ring(cx, cy, r, c, from, to)
 		local f = i / steps
 		if f >= from and f <= to then
 			local a = f * math.pi * 2 - math.pi * 0.5
-			vid:DrawPixel(v(cx + math.cos(a) * r, cy + math.sin(a) * r), c)
+			vid:SetPixel(v(cx + math.cos(a) * r, cy + math.sin(a) * r), c)
 		end
 	end
 end
@@ -159,7 +159,7 @@ apps[3] = {
 		for i = 1, #paint.pts do
 			local p = paint.pts[i]
 			if paint.size <= 1 then
-				vid:DrawPixel(v(p.x, p.y), p.c)
+				vid:SetPixel(v(p.x, p.y), p.c)
 			else
 				vid:FillCircle(v(p.x, p.y), paint.size, p.c)
 			end
