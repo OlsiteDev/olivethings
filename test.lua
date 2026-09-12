@@ -16,19 +16,19 @@ local W, H = vid.Width, vid.Height
 -- theme
 -- ------------------------------------------------------------
 local accents = {
-	color(0, 220, 180),
-	color(255, 90, 140),
-	color(255, 190, 60),
-	color(120, 150, 255),
+	Color(0, 220, 180),
+	Color(255, 90, 140),
+	Color(255, 190, 60),
+	Color(120, 150, 255),
 }
 local accentIdx = 1
 
 local th = {
-	bg    = color(10, 10, 16),
-	panel = color(26, 26, 38),
-	line  = color(48, 48, 66),
-	text  = color(235, 235, 245),
-	dim   = color(120, 120, 145),
+	bg    = Color(10, 10, 16),
+	panel = Color(26, 26, 38),
+	line  = Color(48, 48, 66),
+	text  = Color(235, 235, 245),
+	dim   = Color(120, 120, 145),
 }
 local function AC() return accents[accentIdx] end
 
@@ -237,7 +237,7 @@ local function statusBar(title)
 	local pct = 1 - ((t * 0.004) % 1)
 	local bw = 14
 	frame(W - bw - 4, 3, bw, 6, th.dim)
-	box(W - bw - 3, 4, math.max(1, (bw - 2) * pct), 4, pct > 0.2 and AC() or color(255, 60, 60))
+	box(W - bw - 3, 4, math.max(1, (bw - 2) * pct), 4, pct > 0.2 and AC() or Color(255, 60, 60))
 end
 
 local function navBar(label)
