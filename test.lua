@@ -1,5 +1,5 @@
 -- ============================================================
---  CPU1.lua  --  "logoOS"  : tiny phone OS for Retro Gadgets
+--  CPU0.lua  --  "logoOS"  : tiny phone OS for Retro Gadgets
 --  Hardware: VideoChip0 (touch screen recommended)
 --  Boot screen draws "logo" dead center. Then: home + 4 apps.
 -- ============================================================
@@ -193,7 +193,7 @@ apps[4] = {
 		local y = top + 6
 		local lines = {
 			"logoOS 1.0",
-			"cpu   CPU1",
+			"cpu   CPU0",
 			"video " .. W .. "x" .. H,
 			"font  " .. CW .. "x" .. CH,
 			"pts   " .. #paint.pts,
@@ -328,7 +328,7 @@ function init()
 end
 
 function update()
-	local now = gdt.CPU1.Time
+	local now = gdt.CPU0.Time
 	dt = math.max(0, now - t)
 	t = now
 	stateT = stateT + dt
